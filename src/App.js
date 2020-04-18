@@ -27,7 +27,7 @@ function App() {
     const response = await api.delete(`repositories/${id}`);
 
     if(response.status === 204) {
-      setRepositories(repositories.filter(repositorie => repositorie.id !== id));
+      setRepositories(repositories.filter(repository => repository.id !== id));
     }
   }
 
@@ -35,11 +35,11 @@ function App() {
     <div>
       <ul data-testid="repository-list">
         {
-          repositories.map(repositorie => (
-            <li key={repositorie.id}>
-              {repositorie.title}
+          repositories.map(repository => (
+            <li key={repository.id}>
+              {repository.title}
 
-              <button onClick={() => handleRemoveRepository(repositorie.id)}>
+              <button onClick={() => handleRemoveRepository(repository.id)}>
                 Remover
               </button>
             </li>
